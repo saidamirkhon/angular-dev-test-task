@@ -1,4 +1,4 @@
-- implement weather-forecast/model lib
+- ~~implement weather-forecast/model lib~~
 - implement weather-forecast/api lib
 - implement weather-forecast/store lib
 - implement weather-forecast/ui/search-input lib
