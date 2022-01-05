@@ -1,0 +1,11 @@
+- implement weather-forecast/model lib
+- implement weather-forecast/api lib
+- implement weather-forecast/store lib
+- implement weather-forecast/ui/search-input lib
+- implement weather-forecast/ui/auto-complete lib
+- implement weather-forecast/ui/option-list lib
+- implement weather-forecast/ui/daily-grid lib
+- implement weather-forecast/ui/hourly-grid lib
+- implement weather-forecast app
+- test/bugfix
+- ui adjustments
