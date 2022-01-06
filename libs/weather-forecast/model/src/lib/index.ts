@@ -11,3 +11,4 @@ export { WeatherForecastGridData } from './weather-forecast-grid-data';
 export { WeatherForecastHourlyGridRecord } from './weather-forecast-hourly-grid-record';
 export { WeatherForecastDailyGridRecord } from './weather-forecast-daily-grid-record';
 export { WeatherForecastGridDataBase } from './weather-forecast-grid-data-base';
+export { WeatherForecastApiLibConfig } from './weather-forecast-api-lib-config';
