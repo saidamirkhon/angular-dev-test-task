@@ -7,4 +7,5 @@ export { getWeatherForecastGridRecordList } from './get-weather-forecast-grid-re
 export { noopNgrxAction } from './noop-ngrx-action';
 export { getCityOptionList } from './get-city-option-list';
 export { latLonToCityId } from './lat-lon-to-city-id';
-export { cityIdToLatLon } from './city-id-to-lat-lon.js';
+export { cityIdToLatLon } from './city-id-to-lat-lon';
+export { DirectiveDestroyedMixin } from './directive-destroyed-mixin';
