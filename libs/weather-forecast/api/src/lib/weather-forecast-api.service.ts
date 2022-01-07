@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import {
 	CityLatLonApiResponse,
 	DailyWeatherForecastApiResponse,
+	HourlyWeatherForecastApiResponse,
 	LatLon,
 	WeatherForecastApiLibConfig,
 } from '@bp/weather-forecast/model';
@@ -24,9 +25,9 @@ export class WeatherForecastApiService {
 
 	fetchCityLatLon(
 		city: string,
-	): Observable<CityLatLonApiResponse> {
+	): Observable<CityLatLonApiResponse[]> {
 		return this.http
-			.get<CityLatLonApiResponse>(
+			.get<CityLatLonApiResponse[]>(
 				`${this.API_BASE_URL}/geo/1.0/direct`,
 				{
 					params: {
@@ -63,9 +64,9 @@ export class WeatherForecastApiService {
 
 	fetchHourlyWeatherForecast(
 		latLon: LatLon,
-	): Observable<DailyWeatherForecastApiResponse> {
+	): Observable<HourlyWeatherForecastApiResponse> {
 		return this.http
-			.get<DailyWeatherForecastApiResponse>(
+			.get<HourlyWeatherForecastApiResponse>(
 				`${this.API_BASE_URL}/data/2.5/onecall`,
 				{
 					params: {

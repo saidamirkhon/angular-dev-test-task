@@ -131,6 +131,24 @@
 			},
 			"tags": []
 		},
+		"weather-forecast-store": {
+			"projectType": "library",
+			"root": "libs/weather-forecast/store",
+			"sourceRoot": "libs/weather-forecast/store/src",
+			"prefix": "bp",
+			"architect": {
+				"lint": {
+					"builder": "@nrwl/linter:eslint",
+					"options": {
+						"lintFilePatterns": [
+							"libs/weather-forecast/store/src/**/*.ts",
+							"libs/weather-forecast/store/src/**/*.html"
+						]
+					}
+				}
+			},
+			"tags": []
+		},
 		"weather-forecast-util": {
 			"projectType": "library",
 			"root": "libs/weather-forecast/util",

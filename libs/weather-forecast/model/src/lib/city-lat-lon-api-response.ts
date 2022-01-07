@@ -1,6 +1,6 @@
 import { LatLon } from './lat-lon';
 
-export type CityLatLonApiResponse = (LatLon & {
+export interface CityLatLonApiResponse extends LatLon {
 	name: string;
 	country: string;
-})[];
+}

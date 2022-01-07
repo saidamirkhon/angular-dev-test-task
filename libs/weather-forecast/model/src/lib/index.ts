@@ -12,3 +12,5 @@ export { WeatherForecastHourlyGridRecord } from './weather-forecast-hourly-grid-
 export { WeatherForecastDailyGridRecord } from './weather-forecast-daily-grid-record';
 export { WeatherForecastGridDataBase } from './weather-forecast-grid-data-base';
 export { WeatherForecastApiLibConfig } from './weather-forecast-api-lib-config';
+export { WeatherForecastIntervalCityIdApiResponseMap } from './weather-forecast-interval-city-id-api-response-map';
+export { WeatherForecastGridDef } from './weather-forecast-grid-def';

@@ -1,11 +1,9 @@
 import {
-	WeatherForecastGridColumn,
+	WeatherForecastGridDef,
 	WeatherForecastGridRecordBase,
 } from '@bp/weather-forecast/model';
 
-export interface WeatherForecastGridDataBase<T extends WeatherForecastGridRecordBase> {
+export interface WeatherForecastGridDataBase<T extends WeatherForecastGridRecordBase> extends WeatherForecastGridDef<T> {
 	title: string;
-	columnList: WeatherForecastGridColumn<T>[];
-	recordList: T[];
 	loading: boolean;
 }
