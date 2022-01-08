@@ -1,6 +1,6 @@
 import { OnDestroy } from '@angular/core';
-import { Constructor } from '@bp/weather-forecast/model';
 import { Subject } from 'rxjs';
+import { Constructor } from '@bp/shared/model';
 
 export function DirectiveDestroyedMixin<T extends Constructor<{}>>(Base = class {
 } as T) {

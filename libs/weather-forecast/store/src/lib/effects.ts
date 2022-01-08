@@ -21,17 +21,17 @@ import {
 	cityIdToLatLon,
 	getCityOptionList,
 	latLonToCityId,
-	noopNgrxAction,
 } from '@bp/weather-forecast/util';
 import {
 	CityLatLonApiResponse,
 	DailyWeatherForecastApiResponse,
 	HourlyWeatherForecastApiResponse,
-	Option,
 	WeatherForecastInterval,
 } from '@bp/weather-forecast/model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { WeatherForecastSelectors } from './selectors';
+import { Option } from '@bp/shared/model';
+import { noopNgrxAction } from '@bp/shared/util';
 
 @Injectable()
 export class WeatherForecastEffects {

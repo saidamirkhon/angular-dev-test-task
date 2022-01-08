@@ -4,11 +4,11 @@ import {
 	on,
 } from '@ngrx/store';
 import {
-	Option,
 	WeatherForecastInterval,
 	WeatherForecastIntervalCityIdApiResponseMap,
 } from '@bp/weather-forecast/model';
 import { WeatherForecastActions } from './actions';
+import { Option } from '@bp/shared/model';
 
 export module WeatherForecastStore {
 	export const key = 'weather-forecast';

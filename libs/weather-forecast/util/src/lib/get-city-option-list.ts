@@ -1,8 +1,8 @@
 import {
 	CityLatLonApiResponse,
-	Option,
 } from '@bp/weather-forecast/model';
 import { latLonToCityId } from './lat-lon-to-city-id';
+import { Option } from '@bp/shared/model';
 
 export function getCityOptionList(
 	cityLatLonApiResponse: CityLatLonApiResponse[],

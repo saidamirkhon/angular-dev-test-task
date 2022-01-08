@@ -2,14 +2,16 @@ import {
 	createAction,
 	props,
 } from '@ngrx/store';
-import { fetchFailActionFactory } from '@bp/weather-forecast/util';
 import {
 	DailyWeatherForecastApiResponse,
 	HourlyWeatherForecastApiResponse,
-	LatLon,
-	Option,
 	WeatherForecastInterval,
 } from '@bp/weather-forecast/model';
+import {
+	LatLon,
+	Option,
+} from '@bp/shared/model';
+import { fetchFailActionFactory } from '@bp/shared/util';
 
 export module WeatherForecastActions {
 	export const fetchCityLatLon = createAction(

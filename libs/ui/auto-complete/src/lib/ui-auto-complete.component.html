@@ -1,0 +1,40 @@
+<form>
+	<mat-form-field appearance="fill">
+		<mat-label>{{label}}</mat-label>
+		<input
+			#input
+			type="text"
+			[placeholder]="placeholder"
+			matInput
+			(appSearch)="onSearch.emit($event)"
+			[matAutocomplete]="auto"
+		>
+		<mat-autocomplete
+			autoActiveFirstOption
+			#auto="matAutocomplete"
+		>
+			<mat-option
+				*ngFor="let option of optionList"
+				[value]="option.value"
+			>
+				{{option.label}}
+			</mat-option>
+		</mat-autocomplete>
+		<div
+			class="input-suffix"
+			matSuffix
+		>
+			<mat-spinner
+				diameter="16"
+				[style.opacity]="loading ? 1 : 0"
+			></mat-spinner>
+			<button
+				*ngIf="input.value.length"
+				mat-icon-button
+				(click)="$event.preventDefault(); onClearSearch.emit()"
+			>
+				<mat-icon>close</mat-icon>
+			</button>
+		</div>
+	</mat-form-field>
+</form>

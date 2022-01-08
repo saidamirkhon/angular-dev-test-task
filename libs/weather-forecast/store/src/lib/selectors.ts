@@ -1,11 +1,9 @@
 import {
 	getWeatherForecastGridColumnList,
 	getWeatherForecastGridRecordList,
-	stateSliceSelectorFactory,
 } from '@bp/weather-forecast/util';
 import { WeatherForecastStore } from './store';
 import {
-	Option,
 	WeatherForecastDailyGridRecord,
 	WeatherForecastGridData,
 	WeatherForecastGridDataBase,
@@ -15,6 +13,8 @@ import {
 } from '@bp/weather-forecast/model';
 import { createSelector } from '@ngrx/store';
 import { WEATHER_FORECAST_GRID_TITLE_MAP } from '@bp/weather-forecast/constant';
+import { Option } from '@bp/shared/model';
+import { stateSliceSelectorFactory } from '@bp/shared/util';
 
 export module WeatherForecastSelectors {
 	const selectSlice = stateSliceSelectorFactory<WeatherForecastStore.State>(WeatherForecastStore.key);

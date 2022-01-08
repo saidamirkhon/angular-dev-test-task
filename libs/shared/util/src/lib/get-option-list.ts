@@ -1,4 +1,4 @@
-import { Option } from '@bp/weather-forecast/model';
+import { Option } from '@bp/shared/model';
 
 export function getOptionList<T extends string | number>(
 	optionValueList: T[],

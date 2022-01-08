@@ -13,7 +13,7 @@ import {
 	takeUntil,
 	tap,
 } from 'rxjs/operators';
-import { DirectiveDestroyedMixin } from '@bp/weather-forecast/util';
+import { DirectiveDestroyedMixin } from '@bp/shared/util';
 
 @Directive({
 	selector: '[appSearch]',

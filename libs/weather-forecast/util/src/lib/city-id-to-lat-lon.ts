@@ -1,5 +1,5 @@
-import { LatLon } from '@bp/weather-forecast/model';
 import { LAT_LON_DELIMITER } from '@bp/weather-forecast/constant';
+import { LatLon } from '@bp/shared/model';
 
 export function cityIdToLatLon(cityId: string): LatLon | null {
 	const [latValue, lonValue] = cityId.split(LAT_LON_DELIMITER);

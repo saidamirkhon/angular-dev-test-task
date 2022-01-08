@@ -4,6 +4,9 @@
 		"paths": {
 			"@bp/line-chart/models": ["libs/line-chart/models/src/index.ts"],
 			"@bp/line-chart/services": ["libs/line-chart/services/src/index.ts"],
+			"@bp/shared/model": ["libs/shared/model/src/index.ts"],
+			"@bp/shared/util": ["libs/shared/util/src/index.ts"],
+			"@bp/ui/auto-complete": ["libs/ui/auto-complete/src/index.ts"],
 			"@bp/ui/search-input": ["libs/ui/search-input/src/index.ts"],
 			"@bp/weather-forecast/api": ["libs/weather-forecast/api/src/index.ts"],
 			"@bp/weather-forecast/constant": ["libs/weather-forecast/constant/src/index.ts"],

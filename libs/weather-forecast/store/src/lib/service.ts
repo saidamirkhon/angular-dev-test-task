@@ -5,7 +5,7 @@ import {
 } from '@ngrx/store';
 import { WeatherForecastActions } from './actions';
 import {
-	Option,
+	WeatherForecastGridData,
 	WeatherForecastInterval,
 } from '@bp/weather-forecast/model';
 import {
@@ -14,6 +14,7 @@ import {
 } from 'rxjs';
 import { WEATHER_FORECAST_INTERVAL_OPTION_LIST } from '@bp/weather-forecast/constant';
 import { WeatherForecastSelectors } from './selectors';
+import { Option } from '@bp/shared/model';
 
 @Injectable()
 export class WeatherForecastStoreService {
@@ -33,6 +34,10 @@ export class WeatherForecastStoreService {
 	fetchCityLatLonIsInProgress$: Observable<boolean> = this.store$
 		.pipe(
 			select(WeatherForecastSelectors.selectFetchCityLatLonIsInProgress),
+		);
+	weatherForecastGridData: Observable<WeatherForecastGridData> = this.store$
+		.pipe(
+			select(WeatherForecastSelectors.selectWeatherForecastGridData),
 		);
 
 	constructor(

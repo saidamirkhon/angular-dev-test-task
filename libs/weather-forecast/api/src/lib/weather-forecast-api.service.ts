@@ -8,10 +8,10 @@ import {
 	CityLatLonApiResponse,
 	DailyWeatherForecastApiResponse,
 	HourlyWeatherForecastApiResponse,
-	LatLon,
 	WeatherForecastApiLibConfig,
 } from '@bp/weather-forecast/model';
 import { WEATHER_FORECAST_API_LIB_CONFIG_INJECTION_TOKEN } from '@bp/weather-forecast/constant';
+import { LatLon } from '@bp/shared/model';
 
 @Injectable()
 export class WeatherForecastApiService {
