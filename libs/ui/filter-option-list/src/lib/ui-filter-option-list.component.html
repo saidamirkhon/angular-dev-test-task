@@ -1,0 +1,13 @@
+<p>
+	{{label}}
+	<mat-button-toggle-group
+		[vertical]="layout === Layout.VERTICAL"
+		[value]="activeOption.value"
+		(change)="onOptionSelect.emit($event.value)"
+	>
+		<mat-button-toggle
+			*ngFor="let option of optionList"
+			[value]="option.value"
+		>{{option.label}}</mat-button-toggle>
+	</mat-button-toggle-group>
+</p>

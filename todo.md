@@ -2,8 +2,8 @@
 - ~~implement weather-forecast/api lib~~
 - ~~implement weather-forecast/store lib~~
 - ~~implement weather-forecast/ui/search-input lib~~
-- implement weather-forecast/ui/auto-complete lib
-- implement weather-forecast/ui/option-list lib
+- ~~implement weather-forecast/ui/auto-complete lib~~
+- ~~implement weather-forecast/ui/filter-option-list lib~~
 - implement weather-forecast/ui/grid lib
 - implement weather-forecast app
 - test/bugfix
