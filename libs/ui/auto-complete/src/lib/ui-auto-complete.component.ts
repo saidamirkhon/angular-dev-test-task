@@ -16,10 +16,11 @@ import { Option } from '@bp/shared/model';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiAutoCompleteComponent {
-	@Input() loading = false;
+	@Input() loading: boolean | null = false;
 	@Input() label = '';
 	@Input() placeholder = '';
-	@Input() optionList: Option<any>[] = [];
+	@Input() optionList: Option<any>[] | null = null;
+	@Input() value: string | null = '';
 	@Output() onOptionSelect: EventEmitter<Option<any>> = new EventEmitter();
 	@Output() onClearSearch: EventEmitter<void> = new EventEmitter();
 	@Output() onSearch: EventEmitter<string> = new EventEmitter();

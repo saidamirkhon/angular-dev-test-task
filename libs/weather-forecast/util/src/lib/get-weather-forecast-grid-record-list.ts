@@ -24,7 +24,7 @@ export function getWeatherForecastGridRecordList(
 						recordList
 							.push(
 								dailyRecordList
-									.slice(0, 6)
+									.slice(0, 7)
 									.reduce(
 										(
 											record: WeatherForecastDailyGridRecord,
@@ -34,7 +34,7 @@ export function getWeatherForecastGridRecordList(
 
 											return {
 												...record,
-												[`day${index + 1}Temp`]: dailyRecord.temp,
+												[`day${index + 1}Temp`]: dailyRecord.temp.day,
 											};
 										},
 										{

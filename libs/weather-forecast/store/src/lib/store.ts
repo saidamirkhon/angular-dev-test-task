@@ -62,6 +62,7 @@ export module WeatherForecastStore {
 						...state,
 						cityOptionList,
 						cityIdNameMap: {
+							...state.cityIdNameMap,
 							...cityOptionList
 								.reduce(
 									(
@@ -141,6 +142,8 @@ export module WeatherForecastStore {
 					{
 						...state,
 						city: '',
+						cityOptionList: [],
+						fetchCityLatLonIsInProgress: false,
 					}
 				),
 			),
@@ -164,6 +167,7 @@ export module WeatherForecastStore {
 					{
 						...state,
 						cityOptionList: [],
+						city: '',
 					}
 				),
 			),

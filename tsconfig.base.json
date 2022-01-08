@@ -7,6 +7,7 @@
 			"@bp/shared/model": ["libs/shared/model/src/index.ts"],
 			"@bp/shared/util": ["libs/shared/util/src/index.ts"],
 			"@bp/ui/auto-complete": ["libs/ui/auto-complete/src/index.ts"],
+			"@bp/ui/data-grid": ["libs/ui/data-grid/src/index.ts"],
 			"@bp/ui/filter-option-list": ["libs/ui/filter-option-list/src/index.ts"],
 			"@bp/ui/search-input": ["libs/ui/search-input/src/index.ts"],
 			"@bp/weather-forecast/api": ["libs/weather-forecast/api/src/index.ts"],

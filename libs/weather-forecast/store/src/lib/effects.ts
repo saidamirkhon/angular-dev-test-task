@@ -12,6 +12,7 @@ import {
 import { WeatherForecastActions } from './actions';
 import {
 	catchError,
+	mergeMap,
 	switchMap,
 	withLatestFrom,
 } from 'rxjs/operators';
@@ -39,7 +40,7 @@ export class WeatherForecastEffects {
 		() => this.actions$
 			.pipe(
 				ofType(WeatherForecastActions.fetchCityLatLon),
-				switchMap(({ city }) => {
+				mergeMap(({ city }) => {
 					if (city.trim().length > 0) {
 						return this.weatherForecastApiService
 							.fetchCityLatLon(city)
@@ -57,7 +58,7 @@ export class WeatherForecastEffects {
 								),
 							);
 					}
-					return of(noopNgrxAction);
+					return of(WeatherForecastActions.clearCitySearch());
 				}),
 			),
 	);

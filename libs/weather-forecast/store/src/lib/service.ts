@@ -35,7 +35,7 @@ export class WeatherForecastStoreService {
 		.pipe(
 			select(WeatherForecastSelectors.selectFetchCityLatLonIsInProgress),
 		);
-	weatherForecastGridData: Observable<WeatherForecastGridData> = this.store$
+	weatherForecastGridData$: Observable<WeatherForecastGridData> = this.store$
 		.pipe(
 			select(WeatherForecastSelectors.selectWeatherForecastGridData),
 		);

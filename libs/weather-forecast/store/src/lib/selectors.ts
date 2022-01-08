@@ -13,7 +13,10 @@ import {
 } from '@bp/weather-forecast/model';
 import { createSelector } from '@ngrx/store';
 import { WEATHER_FORECAST_GRID_TITLE_MAP } from '@bp/weather-forecast/constant';
-import { Option } from '@bp/shared/model';
+import {
+	GridColumn,
+	Option,
+} from '@bp/shared/model';
 import { stateSliceSelectorFactory } from '@bp/shared/util';
 
 export module WeatherForecastSelectors {
@@ -33,6 +36,10 @@ export module WeatherForecastSelectors {
 			weatherForecastIntervalCityIdApiResponseMap: WeatherForecastIntervalCityIdApiResponseMap,
 			cityIdNameMap: Record<string, string>,
 		): WeatherForecastGridData => {
+			const columnList = getWeatherForecastGridColumnList(
+				weatherForecastInterval,
+				Object.values(weatherForecastIntervalCityIdApiResponseMap[weatherForecastInterval])[0],
+			);
 			return <WeatherForecastGridDataBase<WeatherForecastDailyGridRecord> | WeatherForecastGridDataBase<WeatherForecastHourlyGridRecord>> {
 				title: WEATHER_FORECAST_GRID_TITLE_MAP[weatherForecastInterval],
 				recordList: getWeatherForecastGridRecordList(
@@ -40,10 +47,9 @@ export module WeatherForecastSelectors {
 					weatherForecastIntervalCityIdApiResponseMap[weatherForecastInterval],
 					cityIdNameMap,
 				),
-				columnList: getWeatherForecastGridColumnList(
-					weatherForecastInterval,
-					weatherForecastIntervalCityIdApiResponseMap[weatherForecastInterval][0],
-				),
+				columnList,
+				displayedColumnNameList: columnList
+					.map((column: GridColumn<WeatherForecastDailyGridRecord> | GridColumn<WeatherForecastHourlyGridRecord>) => column.recordField),
 				loading: fetchWeatherForecastIsInProgress,
 			};
 		},

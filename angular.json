@@ -47,6 +47,21 @@
 			},
 			"tags": []
 		},
+		"ui-data-grid": {
+			"projectType": "library",
+			"root": "libs/ui/data-grid",
+			"sourceRoot": "libs/ui/data-grid/src",
+			"prefix": "bp",
+			"architect": {
+				"lint": {
+					"builder": "@nrwl/linter:eslint",
+					"options": {
+						"lintFilePatterns": ["libs/ui/data-grid/src/**/*.ts", "libs/ui/data-grid/src/**/*.html"]
+					}
+				}
+			},
+			"tags": []
+		},
 		"ui-filter-option-list": {
 			"projectType": "library",
 			"root": "libs/ui/filter-option-list",
@@ -129,6 +144,15 @@
 									"maximumError": "10kb"
 								}
 							]
+						},
+						"dev": {
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": true,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
 						}
 					}
 				},
@@ -140,8 +164,12 @@
 					"configurations": {
 						"production": {
 							"browserTarget": "weather-forecast:build:production"
+						},
+						"dev": {
+							"browserTarget": "weather-forecast:build:dev"
 						}
-					}
+					},
+					"defaultConfiguration": "dev"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",

@@ -17,8 +17,8 @@ import {
 })
 export class UiFilterOptionListComponent {
 	@Input() layout = Layout.HORIZONTAL;
-	@Input() optionList: Option<any>[] = [];
-	@Input() activeOption: Option<any> = { value: null, label: '' };
+	@Input() optionList: Option<any>[] | null = null;
+	@Input() value: any = null;
 	@Input() label = '';
 	@Output() onOptionSelect: EventEmitter<any> = new EventEmitter();
 	Layout = Layout;
