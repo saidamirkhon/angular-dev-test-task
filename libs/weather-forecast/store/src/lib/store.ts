@@ -87,6 +87,7 @@ export module WeatherForecastStore {
 					{
 						...state,
 						fetchCityLatLonIsInProgress: false,
+						cityOptionList: [],
 					}
 				),
 			),

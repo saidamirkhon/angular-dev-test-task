@@ -65,7 +65,7 @@ export function getWeatherForecastGridColumnList(
 											{
 												title: formatDate(
 													dt * 1000,
-													'H : mm',
+													'H:mm',
 													'en-US',
 												),
 												recordField: `hour${columnList.length + 1}Temp` as keyof WeatherForecastHourlyGridRecord,

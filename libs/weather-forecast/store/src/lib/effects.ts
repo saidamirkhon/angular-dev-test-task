@@ -28,11 +28,13 @@ import {
 	DailyWeatherForecastApiResponse,
 	HourlyWeatherForecastApiResponse,
 	WeatherForecastInterval,
+	WeatherForecastNotificationText,
 } from '@bp/weather-forecast/model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { WeatherForecastSelectors } from './selectors';
 import { Option } from '@bp/shared/model';
 import { noopNgrxAction } from '@bp/shared/util';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
 export class WeatherForecastEffects {
@@ -45,16 +47,36 @@ export class WeatherForecastEffects {
 						return this.weatherForecastApiService
 							.fetchCityLatLon(city)
 							.pipe(
-								switchMap((response: CityLatLonApiResponse[]) => of(
-									WeatherForecastActions.fetchCityLatLonSuccess(
-										{
-											cityOptionList: getCityOptionList(response),
-										},
-									),
-								)),
-								catchError((error: HttpErrorResponse) => of(
-									WeatherForecastActions.fetchCityLatLonFail({ error }),
-									),
+								switchMap((response: CityLatLonApiResponse[]) => {
+									if (!response.length) {
+										this.matSnackBar.open(
+											WeatherForecastNotificationText.CITY_NOT_FOUND,
+											'ok',
+											{
+												duration: 3000,
+											},
+										);
+									}
+									return of(
+										WeatherForecastActions.fetchCityLatLonSuccess(
+											{
+												cityOptionList: getCityOptionList(response),
+											},
+										),
+									);
+								}),
+								catchError((error: HttpErrorResponse) => {
+										this.matSnackBar.open(
+											WeatherForecastNotificationText.CITY_NOT_FOUND,
+											'ok',
+											{
+												duration: 3000,
+											},
+										);
+										return of(
+											WeatherForecastActions.fetchCityLatLonFail({ error }),
+										);
+									},
 								),
 							);
 					}
@@ -154,6 +176,7 @@ export class WeatherForecastEffects {
 		private actions$: Actions,
 		private store$: Store,
 		private weatherForecastApiService: WeatherForecastApiService,
+		private matSnackBar: MatSnackBar,
 	) {
 	}
 }

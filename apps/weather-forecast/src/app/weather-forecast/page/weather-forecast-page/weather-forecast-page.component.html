@@ -1,0 +1,19 @@
+<ui-auto-complete
+	[optionList]="weatherForecastStoreService.cityOptionList$ | async"
+	(onOptionSelect)="weatherForecastStoreService.selectSuggestedCityOption($event); clearCitySearch()"
+	placeholder="Search city..."
+	label="City"
+	[loading]="weatherForecastStoreService.fetchCityLatLonIsInProgress$ | async"
+	(onClearSearch)="clearCitySearch()"
+	(onSearch)="fetchCityLatLon($event)"
+	[value]="weatherForecastStoreService.city$ | async"
+></ui-auto-complete>
+<ui-filter-option-list
+	label="Select interval: "
+	[value]="weatherForecastStoreService.weatherForecastInterval$ | async"
+	[optionList]="weatherForecastStoreService.weatherForecastIntervalOptionList$ | async"
+	(onOptionSelect)="setWeatherForecastInterval($event)"
+></ui-filter-option-list>
+<ui-data-grid
+	[gridData]="weatherForecastStoreService.weatherForecastGridData$ | async"
+></ui-data-grid>

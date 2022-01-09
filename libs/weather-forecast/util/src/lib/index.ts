@@ -3,3 +3,4 @@ export { getWeatherForecastGridRecordList } from './get-weather-forecast-grid-re
 export { getCityOptionList } from './get-city-option-list';
 export { latLonToCityId } from './lat-lon-to-city-id';
 export { cityIdToLatLon } from './city-id-to-lat-lon';
+export { getValidWeatherForecastQueryParams } from './get-valid-weather-forecast-query-params';

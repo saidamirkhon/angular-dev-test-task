@@ -1,28 +1,40 @@
-<ng-container *ngIf="gridData">
-	<table
-		mat-table
-		[dataSource]="gridData.recordList"
-	>
-		<ng-container
-			*ngFor="let column of gridData.columnList;"
-			[matColumnDef]="column.id"
+<div class="data-grid">
+	<ng-container *ngIf="gridData">
+		<p class="mat-title">{{gridData.title}}</p>
+		<div
+			*ngIf="gridData.loading"
+			class="data-grid__spinner"
 		>
-			<th
-				mat-header-cell
-				*matHeaderCellDef
-			> {{column.title}} </th>
-			<td
-				mat-cell
-				*matCellDef="let element"
-			> {{element[column.recordField]}} </td>
-		</ng-container>
-		<tr
-			mat-header-row
-			*matHeaderRowDef="gridData.displayedColumnNameList"
-		></tr>
-		<tr
-			mat-row
-			*matRowDef="let row; columns: gridData.displayedColumnNameList;"
-		></tr>
-	</table>
-</ng-container>
+			<mat-spinner
+				diameter="16"
+			></mat-spinner>
+		</div>
+		<table
+			class="data-grid__table"
+			mat-table
+			[dataSource]="gridData.recordList"
+		>
+			<ng-container
+				*ngFor="let column of gridData.columnList;"
+				[matColumnDef]="column.id"
+			>
+				<th
+					mat-header-cell
+					*matHeaderCellDef
+				> {{column.title}} </th>
+				<td
+					mat-cell
+					*matCellDef="let element"
+				> {{element[column.recordField]}} </td>
+			</ng-container>
+			<tr
+				mat-header-row
+				*matHeaderRowDef="gridData.displayedColumnNameList"
+			></tr>
+			<tr
+				mat-row
+				*matRowDef="let row; columns: gridData.displayedColumnNameList;"
+			></tr>
+		</table>
+	</ng-container>
+</div>

@@ -6,6 +6,7 @@ import { WeatherForecastEffects } from './effects';
 import { WeatherForecastApiModule } from '@bp/weather-forecast/api';
 import { WEATHER_FORECAST_API_LIB_CONFIG } from '@bp/weather-forecast/constant';
 import { WeatherForecastStoreService } from './service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
 	imports: [
@@ -22,6 +23,7 @@ import { WeatherForecastStoreService } from './service';
 				WeatherForecastEffects,
 			],
 		),
+		MatSnackBarModule,
 	],
 	providers: [
 		WeatherForecastStoreService,
